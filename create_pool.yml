@@ -1,0 +1,16 @@
+- hosts: localhost
+  connection: local
+  collections:
+    - vmware.alb
+  vars_files:
+    - avi_vars.yml
+  tasks:
+    - name: Example to create a Pool object
+      avi_pool:
+        avi_credentials: "{{ avi_credentials |  default(omit) }}"
+        name: ansible-demo-pool
+        lb_algorithm: LB_ALGORITHM_ROUND_ROBIN
+        servers:
+        - ip:
+             addr: "192.168.12.15"
+             type: 'V4'
