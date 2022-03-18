@@ -1,0 +1,5 @@
+avi_credentials:
+    controller: "10.213.166.6"
+    username: "admin"
+    password: "VMware1!VMware1!"
+    api_version: 20.1.6
